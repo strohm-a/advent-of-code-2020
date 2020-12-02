@@ -1,0 +1,27 @@
+body {
+  background-color: #282c34;
+  color: white;
+}
+
+.app {
+  .header {
+    padding: 1rem 0rem 1rem 0rem;
+    text-align: center;
+    font-size: x-large;
+    border-bottom: 1px red solid;
+  }
+
+  .section {
+    border-bottom: 1px red solid;
+  }
+
+  .section-header {
+    font-size: large;
+    border-bottom: 1px blue solid;
+    padding: 2rem 2rem 2rem 2rem;
+  }
+
+  .solution {
+    padding: 0rem 2rem 0rem 2rem;
+  }
+}
