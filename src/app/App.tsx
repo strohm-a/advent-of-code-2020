@@ -39,12 +39,12 @@ class App extends Component {
 
         <div className="section">
           <div className="section-header">Day 1 - Problem 1</div>
-          <p> {day1Solution1}</p>
+          {day1Solution1}
         </div>
 
         <div className="section">
           <div className="section-header">Day 1 - Problem 2</div>
-          <p> {day1Solution2}</p>
+          {day1Solution2}
         </div>
       </div>
     );
