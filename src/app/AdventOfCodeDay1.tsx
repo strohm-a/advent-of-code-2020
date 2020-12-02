@@ -211,7 +211,22 @@ export class AdventOfCodeDay1 {
     return result;
   }
 
-  private findSum(sum: number): number[]{
+  public solvePart2(): number[] {
+    for (let index1 = 1; index1 < this.numbers.length; index1++) {
+      let currentNumber: number = this.numbers[index1];
+      let result: number[] = this.findSum(2020 - currentNumber);
+      if (result.length > 0) {
+        let combinedResults: number[] = [];
+        combinedResults.push(currentNumber);
+        combinedResults = combinedResults.concat(result);
+        return combinedResults;
+      }
+    }
+
+    return [];
+  }
+
+  private findSum(sum: number): number[] {
     for (let index1 = 1; index1 < this.numbers.length; index1++) {
       let test: number = this.numbers[index1];
       for (let index2 = 0; index2 < this.numbers.length; index2++) {
