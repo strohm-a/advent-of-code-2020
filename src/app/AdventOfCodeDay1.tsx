@@ -235,9 +235,6 @@ export class AdventOfCodeDay1 {
         let total: number = test + next;
 
         if (sum === total) {
-          let returnString: string = 'Solved: ' + test + ' + ' + next;
-          // console.log('Solved: ' + returnString);
-
           let returnNumbers: number[] = [];
           returnNumbers.push(test);
           returnNumbers.push(next);
