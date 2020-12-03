@@ -1,77 +1,59 @@
-import React, { Component, ReactElement } from 'react';
-import { AdventOfCodeDay1 } from './AdventOfCodeDay1';
+import React, { Component } from 'react';
+import { Day01 } from './AdventOfCodeDay01';
 import '../scss/App.scss';
-import { AdventOfCodeDay2 } from './AdventOfCodeDay2';
+import { Day02 } from './AdventOfCodeDay02';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 class App extends Component {
   render() {
-    let adventDay1: AdventOfCodeDay1 = new AdventOfCodeDay1();
-    let numbers: number[] = [];
-
-    let day1Solution1: ReactElement = <div>No match found</div>;
-    numbers = adventDay1.solvePart1();
-    if (numbers.length > 0) {
-      day1Solution1 = (
-        <div className="solution">
-          <p>
-            Numbers are: {numbers[0]} + {numbers[1]} = {numbers[0] + numbers[1]}
-          </p>
-          <p>Product = {numbers[0] * numbers[1]}</p>
-        </div>
-      );
-    }
-
-    let day1Solution2: ReactElement = <div>No match found</div>;
-    numbers = adventDay1.solvePart2();
-    if (numbers.length > 0) {
-      day1Solution2 = (
-        <div className="solution">
-          <p>
-            Numbers are: {numbers[0]} + {numbers[1]} + {numbers[2]} = {numbers[0] + numbers[1] + numbers[2]}
-          </p>
-          <p>Product = {numbers[0] * numbers[1] * numbers[2]}</p>
-        </div>
-      );
-    }
-
-    let day2Solution1: ReactElement = (
-      <div className="solution">
-        <p>No invalid passwords found</p>
-      </div>
-    );
-
-    let adventDay2: AdventOfCodeDay2 = new AdventOfCodeDay2();
-    let validPasswords: string[] = adventDay2.solvePart2();
-    if (validPasswords.length > 0) {
-      day2Solution1 = (
-        <div className="solution">
-          <p>Number of valid passwords: {validPasswords.length}</p>
-{/*           <ul className="list-group">
-            {validPasswords.map((listitem) => <li className="list-group-item">{listitem}</li>)}
-          </ul>
- */}        </div>
-      );
-    }
-
     return (
-      <div className="app">
-        <div className="header">Advent of Code 2020</div>
+      <Router>
+        <div className="app">
+          <div className="header">
+            <h1>Advent of Code 2020</h1>
+            <div>Solutions:</div>
+            <div className="solutions-grid">
+              <div><Link to="/day01">Day 1</Link></div>
+              <div><Link to="/day02">Day 2</Link></div>
+              <div>Day 3</div>
+              <div>Day 4</div>
+              <div>Day 5</div>
+              <div>Day 6</div>
+              <div>Day 7</div>
+              <div>Day 8</div>
+              <div>Day 9</div>
+              <div>Day 10</div>
+              <div>Day 11</div>
+              <div>Day 12</div>
+              <div>Day 13</div>
+              <div>Day 14</div>
+              <div>Day 15</div>
+              <div>Day 16</div>
+              <div>Day 17</div>
+              <div>Day 18</div>
+              <div>Day 19</div>
+              <div>Day 20</div>
+              <div>Day 21</div>
+              <div>Day 22</div>
+              <div>Day 23</div>
+              <div>Day 24</div>
+              <div>Day 25</div>
+            </div>
+          </div>
 
-        <div className="section">
-          <div className="section-header">Day 1 - Problem 1</div>
-          {day1Solution1}
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/day01"/>
+            </Route>
+            <Route path="/day01">
+              <Day01 />
+            </Route>
+            <Route path="/day02">
+              <Day02 />
+            </Route>
+          </Switch>
         </div>
-
-        <div className="section">
-          <div className="section-header">Day 1 - Problem 2</div>
-          {day1Solution2}
-        </div>
-
-        <div className="section">
-          <div className="section-header">Day 2 - Problem 1</div>
-          {day2Solution1}
-        </div>
-      </div>
+      </Router>
     );
   }
 }

@@ -1,3 +1,38 @@
+import { Component, ReactElement } from 'react';
+
+export class Day02 extends Component {
+  render() {
+    let day2Solution1: ReactElement = (
+      <div className="solution">
+        <p>No invalid passwords found</p>
+      </div>
+    );
+
+    let adventDay2: AdventOfCodeDay2 = new AdventOfCodeDay2();
+    let validPasswords: string[] = adventDay2.solvePart2();
+    if (validPasswords.length > 0) {
+      day2Solution1 = (
+        <div className="solution">
+          <p>Number of valid passwords: {validPasswords.length}</p>
+          {/*           <ul className="list-group">
+            {validPasswords.map((listitem) => <li className="list-group-item">{listitem}</li>)}
+          </ul>
+ */}{' '}
+        </div>
+      );
+    }
+
+    return (
+      <div>
+        <div className="section">
+          <div className="section-header">Day 2 - Problem 1</div>
+          {day2Solution1}
+        </div>
+      </div>
+    );
+  }
+}
+
 export class AdventOfCodeDay2 {
   private passwords: string[] = [
     '3-11 z: zzzzzdzzzzlzz',
@@ -1079,8 +1114,7 @@ export class AdventOfCodeDay2 {
         if (countCharacter === array[positionTwo]) {
           isValid = false;
         }
-      }
-      else {
+      } else {
         // See if the character at the second position is the specified character.
         if (countCharacter === array[positionTwo]) {
           isValid = true;
