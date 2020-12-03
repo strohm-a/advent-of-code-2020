@@ -1,6 +1,7 @@
 import React, { Component, ReactElement } from 'react';
 import { AdventOfCodeDay1 } from './AdventOfCodeDay1';
 import '../scss/App.scss';
+import { AdventOfCodeDay2 } from './AdventOfCodeDay2';
 
 class App extends Component {
   render() {
@@ -33,6 +34,25 @@ class App extends Component {
       );
     }
 
+    let day2Solution1: ReactElement = (
+      <div className="solution">
+        <p>No invalid passwords found</p>
+      </div>
+    );
+
+    let adventDay2: AdventOfCodeDay2 = new AdventOfCodeDay2();
+    let validPasswords: string[] = adventDay2.solvePart2();
+    if (validPasswords.length > 0) {
+      day2Solution1 = (
+        <div className="solution">
+          <p>Number of valid passwords: {validPasswords.length}</p>
+{/*           <ul className="list-group">
+            {validPasswords.map((listitem) => <li className="list-group-item">{listitem}</li>)}
+          </ul>
+ */}        </div>
+      );
+    }
+
     return (
       <div className="app">
         <div className="header">Advent of Code 2020</div>
@@ -45,6 +65,11 @@ class App extends Component {
         <div className="section">
           <div className="section-header">Day 1 - Problem 2</div>
           {day1Solution2}
+        </div>
+
+        <div className="section">
+          <div className="section-header">Day 2 - Problem 1</div>
+          {day2Solution1}
         </div>
       </div>
     );
