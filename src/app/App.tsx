@@ -3,6 +3,7 @@ import { Day01 } from './AdventOfCodeDay01';
 import '../scss/App.scss';
 import { Day02 } from './AdventOfCodeDay02';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Day03 } from './AdventOfCodeDay03';
 
 class App extends Component {
   render() {
@@ -15,7 +16,9 @@ class App extends Component {
             <div className="solutions-grid">
               <div><Link to="/day01">Day 1</Link></div>
               <div><Link to="/day02">Day 2</Link></div>
-              <div>Day 3</div>
+              <div><Link to="/day03">
+                Day 3
+              </Link></div>
               <div>Day 4</div>
               <div>Day 5</div>
               <div>Day 6</div>
@@ -50,6 +53,9 @@ class App extends Component {
             </Route>
             <Route path="/day02">
               <Day02 />
+            </Route>
+            <Route path="/day03">
+              <Day03 />
             </Route>
           </Switch>
         </div>
