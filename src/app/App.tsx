@@ -5,6 +5,7 @@ import { Day02 } from './AdventOfCodeDay02';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { Day03 } from './AdventOfCodeDay03';
 import { Day04 } from './AdventOfCodeDay04';
+import { Day05 } from './AdventOfCodeDay05';
 
 class App extends Component {
   render() {
@@ -23,7 +24,9 @@ class App extends Component {
               <div><Link to="/day04">
                 Day 4
               </Link></div>
-              <div>Day 5</div>
+              <div><Link to="/day05">
+                Day 5
+              </Link></div>
               <div>Day 6</div>
               <div>Day 7</div>
               <div>Day 8</div>
@@ -62,6 +65,9 @@ class App extends Component {
             </Route>
             <Route path="/day04">
               <Day04 />
+            </Route>
+            <Route path="/day05">
+              <Day05 />
             </Route>
           </Switch>
         </div>
