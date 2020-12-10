@@ -8,6 +8,7 @@ import { Day04 } from './AdventOfCodeDay04';
 import { Day05 } from './AdventOfCodeDay05';
 import { Day06 } from './AdventOfCodeDay06';
 import { Day07 } from './AdventOfCodeDay07';
+import { Day08 } from './AdventOfCodeDay08';
 
 class App extends Component {
   render() {
@@ -35,7 +36,9 @@ class App extends Component {
               <div><Link to="/day07">
                 Day 7
               </Link></div>
-              <div>Day 8</div>
+              <div><Link to="/day08">
+                Day 8
+              </Link></div>
               <div>Day 9</div>
               <div>Day 10</div>
               <div>Day 11</div>
@@ -80,6 +83,9 @@ class App extends Component {
             </Route>
             <Route path="/day07">
               <Day07 />
+            </Route>
+            <Route path="/day08">
+              <Day08 />
             </Route>
           </Switch>
         </div>
