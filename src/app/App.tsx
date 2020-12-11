@@ -20,27 +20,27 @@ class App extends Component {
             <h1>Advent of Code 2020</h1>
             <div>Solutions:</div>
             <div className="solutions-grid">
-              <div><Link to="/day01">Day 1</Link></div>
-              <div><Link to="/day02">Day 2</Link></div>
-              <div><Link to="/day03">
+              <div><Link to="/day01.html">Day 1</Link></div>
+              <div><Link to="/day02.html">Day 2</Link></div>
+              <div><Link to="/day03.html">
                 Day 3
               </Link></div>
-              <div><Link to="/day04">
+              <div><Link to="/day04.html">
                 Day 4
               </Link></div>
-              <div><Link to="/day05">
+              <div><Link to="/day05.html">
                 Day 5
               </Link></div>
-              <div><Link to="/day06">
+              <div><Link to="/day06.html">
                 Day 6
               </Link></div>
-              <div><Link to="/day07">
+              <div><Link to="/day07.html">
                 Day 7
               </Link></div>
-              <div><Link to="/day08">
+              <div><Link to="/day08.html">
                 Day 8
               </Link></div>
-              <div><Link to="/day09">
+              <div><Link to="/day09.html">
                 Day 9
               </Link></div>
               <div>Day 10</div>
@@ -64,33 +64,33 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/">
-              <Redirect to="/day01"/>
+              <Redirect to="/day01.html"/>
             </Route>
-            <Route path="/day01">
+            <Route path="/day01.html">
               <Day01 />
             </Route>
-            <Route path="/day02">
+            <Route path="/day02.html">
               <Day02 />
             </Route>
-            <Route path="/day03">
+            <Route path="/day03.html">
               <Day03 />
             </Route>
-            <Route path="/day04">
+            <Route path="/day04.html">
               <Day04 />
             </Route>
-            <Route path="/day05">
+            <Route path="/day05.html">
               <Day05 />
             </Route>
-            <Route path="/day06">
+            <Route path="/day06.html">
               <Day06 />
             </Route>
-            <Route path="/day07">
+            <Route path="/day07.html">
               <Day07 />
             </Route>
-            <Route path="/day08">
+            <Route path="/day08.html">
               <Day08 />
             </Route>
-            <Route path="/day09">
+            <Route path="/day09.html">
               <Day09 />
             </Route>
           </Switch>
