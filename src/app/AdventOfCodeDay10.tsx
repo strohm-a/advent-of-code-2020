@@ -9,6 +9,7 @@ export class Day10 extends Component {
         <div className="section">
           <div className="section-header">Day 10</div>
         </div>
+        Total combinations: {advent.pathCount}
         {Array.from(advent.joltDifferences.keys()).map((key: number) => {
           return (
             <div className="solution-element" key={key}>
@@ -184,11 +185,13 @@ export class AdventOfCodeDay10 {
 
   public joltageMap: Map<number, number[]> = new Map();
 
+  public pathCount: number = 0;
+
   constructor () {
     // Get the data
-    let dataInput: number[] = AdventOfCodeDay10.dataExample;
+    // let dataInput: number[] = AdventOfCodeDay10.dataExample;
     // let dataInput: number[] = AdventOfCodeDay10.dataExample2;
-    // let dataInput: number[] = AdventOfCodeDay10.dataActual;
+    let dataInput: number[] = AdventOfCodeDay10.dataActual;
 
     // Sort the array
     dataInput = dataInput.sort((a: number, b: number) => {
@@ -232,8 +235,7 @@ export class AdventOfCodeDay10 {
   }
 
   private getCombinations (dataInput: number[]) {
-    console.log("getCombinations");
-    /* Need to get a count of the valid differences between each element. For example, with:
+    /* Need to get the valid differences between each element. For example, with:
 
     [1,4,5,6,7,10,11,12,15,16,19]
 
@@ -258,11 +260,6 @@ export class AdventOfCodeDay10 {
     // Add the data input joltages
     adapterJoltages = adapterJoltages.concat(dataInput);
 
-    // Add the chgarging adapter joltage
-    adapterJoltages.push(this.chargingAdapterJoltage);
-
-    console.log("adapterJoltages: " + JSON.stringify(adapterJoltages));
-
     this.joltageMap = new Map();
 
     adapterJoltages.forEach((currentJoltage: number, forEachIndex: number, array: number[]) => {
@@ -280,29 +277,21 @@ export class AdventOfCodeDay10 {
       this.joltageMap.set(currentJoltage, validJoltages);
     });
 
-
-    this.joltageMap.forEach((validValues: number[], key: number) => { 
-
-    });
-
-    let paths: number = this.getPaths(adapterJoltages[0]);
-    console.log("paths: " + paths);
+    /* Walk the "tree" and count the number of leaves. The number of leaves is the number of valid paths, or combinations. */
+    this.getLeafCount(adapterJoltages[0]);
+    console.log("leaf count: " + this.pathCount);
   }
 
-  private getPaths(index: number): number {
+  private getLeafCount (index: number) {
     let validValues: number[] = this.joltageMap.get(index);
 
-    let result: number = validValues.length;
     if (0 === validValues.length) {
-      result = 0;
+      this.pathCount++;
+      console.log("getLeafCount: " + this.pathCount);
     }
-    
-    validValues.forEach((value: number) => {
-      result += this.getPaths(value);
-    });
-    
-    console.log("result: " + result);
 
-    return result;
+    validValues.forEach((value: number) => {
+      this.getLeafCount(value);
+    });
   }
 }
