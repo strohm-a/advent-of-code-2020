@@ -1,6 +1,4 @@
-import { group } from "console";
 import { Component, ReactElement } from "react";
-import { Utils } from "./Utils";
 
 export class Day06 extends Component {
   render () {

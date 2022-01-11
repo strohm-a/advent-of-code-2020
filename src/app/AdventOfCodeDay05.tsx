@@ -29,7 +29,7 @@ export class Day05 extends Component {
         let element: number = seatIndexes[index];
         let previousElement: number = seatIndexes[index - 1];
 
-        if (previousElement != element - 1) {
+        if (previousElement !== element - 1) {
           mySeatIndex = (element - 1);
           break;
         }

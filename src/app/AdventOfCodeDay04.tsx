@@ -30,6 +30,7 @@ export class Day04 extends Component {
 }
 
 export class AdventOfCodeDay4 {
+  // eslint-disable-next-line
   private passportDataExample: string = 'eyr:1972 cid:100-\
   hcl:#18171d ecl:amb hgt:170 pid:186cm iyr:2018 byr:1926-\
   -\
@@ -57,6 +58,7 @@ export class AdventOfCodeDay4 {
   -\
   iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719';
 
+  // eslint-disable-next-line
   private passportData: string = 'byr:1937-\
   eyr:2030 pid:154364481-\
   hgt:158cm iyr:2015 ecl:brn hcl:#c0946f cid:155-\

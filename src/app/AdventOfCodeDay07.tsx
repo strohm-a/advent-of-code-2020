@@ -10,7 +10,7 @@ export class Day07 extends Component {
     // Find the bag color in the collection of bags.
     let currentBag: BagInfo = this.bags.get(bagColor);
 
-    if (currentBag != undefined) {
+    if (currentBag !== undefined) {
       Array.from(currentBag.containedBags.keys()).forEach((enumBagColor: string) => {
         result.push(enumBagColor);
 
@@ -27,7 +27,7 @@ export class Day07 extends Component {
     let result: number = 0;
 
     let currentBag: BagInfo = this.bags.get(bagColor);
-    if (currentBag != undefined) {
+    if (currentBag !== undefined) {
       Array.from(currentBag.containedBags.keys()).forEach((enumBagColor: string) => {
         // console.log(bagColor + " contains " + currentBag.containedBags.get(enumBagColor) + " " + enumBagColor + " bags");
 
